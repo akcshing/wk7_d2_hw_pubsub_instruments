@@ -9,9 +9,13 @@ SelectView.prototype.bindEvents = function () {
     // console.log(event.detail);
     const instrumentArr = event.detail;
     this.populate(instrumentArr);
+  });
 
-  })
-
+  this.element.addEventListener("change", (event) => {
+    selectedIndex = event.target.value;
+    // console.log(selectedIndex);
+    PubSub.publish("SelectView:change", selectedIndex);
+  });
 };
 
 SelectView.prototype.populate = function(instrumentArr){
