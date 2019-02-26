@@ -13,12 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const instrumentFamilies = new InstrumentFamilies(instrumentFamilyData);
   instrumentFamilies.bindEvents();
 
-
-
-
-
-  // const resultView = new ResultView();
-  // resultView.bindEvents();
+  const bodyElement = document.querySelector("body");
+  const resultView = new ResultView(bodyElement);
+  resultView.bindEvents();
 
 
   // console.log(instrumentFamilyData);
